@@ -30,7 +30,16 @@ submitBtn.addEventListener("click", () => {
     // duplicate for more
   };
 
-  generatePDF(data);
+  // generatePDF(data);
+  const val = capitalize(userName.value);
+
+  //check if the text is empty or not
+  if (val.trim() !== "" && userName.checkValidity()) {
+    // console.log(val);
+    generatePDF(data);
+  } else {
+    userName.reportValidity();
+  }
 });
 
 const generatePDF = async (fields) => {

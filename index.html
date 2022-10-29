@@ -489,13 +489,30 @@
                   </b></p>
                 <div class="form-group col-md-2">
                   <label for="date">रजेचा दिनांक निवडा.</label>
-                  <input class="form-control" type="date" id="date" name="date" placeholder="दिनांक निवडा ......"
+                  <input class="form-control" type="date" id="date" onclick="mydate();" name="date" placeholder="दिनांक निवडा ......"
                     required>
+
                 </div>
                 <div class="form-group col-md-4">
                   <label for="sname">शाळेचे \ कार्यालयाचे नाव :-</label>
                   <input class="form-control" id="sname" type="text" name="sname" placeholder="शाळेचे संपूर्ण नाव लिहा..."
-                    required>
+                    required><script>   function mydate()
+{
+  //alert("");
+document.getElementById("dt").hidden=false;
+document.getElementById("date").hidden=true;
+}
+function mydate1()
+{
+ d=new Date(document.getElementById("dt").value);
+dt=d.getDate();
+mn=d.getMonth();
+mn++;
+yy=d.getFullYear();
+document.getElementById("ndt").value=dt+"/"+mn+"/"+yy
+document.getElementById("ndt").hidden=false;
+document.getElementById("dt").hidden=true;
+}    </script>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="cname">केंद्राचे\अस्थापनेचे नाव :-</label>
